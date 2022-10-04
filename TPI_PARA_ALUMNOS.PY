@@ -5,6 +5,7 @@ class ProgramaPrincipal:
     def menu(self):
         while True:
             print("Menu de opciones Concesionaria")
+            print("3- Borrar automovil")
             print("2- Modificar Automovil")
             print("1- Cargar Automovil")
             print("0- Salir de menu")
@@ -22,6 +23,11 @@ class ProgramaPrincipal:
                 precio = input("Por favor ingrese el nuevo precio: ")
                 automovil_a_modificar=Automovil(marca,modelo,precio)
                 automovil_a_modificar.modificar_automoviles()
+            if nro ==3:
+                marca = input("Por favor ingrese la marca del auto: ")
+                modelo = input("Por favor ingrese el modelo del auto: ")
+                automovil_a_borrar=Automovil(marca,modelo)
+                automovil_a_borrar.borrar_automovil()
             if nro==0:
                 break
     
@@ -40,6 +46,17 @@ class Automovil:
         self.precio=precio
         self.cantidadDisponibles=cantidadDisponibles
         
+    def borrar_automovil(self):
+        conexion = Conexiones()
+        conexion.abrirConexion()
+        try:
+            conexion.miCursor.execute("DELETE FROM AUTOMOVILES where marca='{}' and modelo='{}' ".format(self.marca, self.modelo))
+            conexion.miConexion.commit()
+            print("El borrado ha sido exitoso.")
+        except:
+            print("Ha ocurrido un error al eliminar los datos requeridos.")
+
+
     def cargar_automovil(self):
         conexion = Conexiones()
         conexion.abrirConexion()
