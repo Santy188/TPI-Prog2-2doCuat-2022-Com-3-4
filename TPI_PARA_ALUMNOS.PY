@@ -4,7 +4,9 @@ class ProgramaPrincipal:
 
     def menu(self):
         while True:
+            print("V1.2")
             print("Menu de opciones Concesionaria")
+            print("4- Cargar disponibilidad")
             print("3- Borrar automovil")
             print("2- Modificar Automovil")
             print("1- Cargar Automovil")
@@ -28,6 +30,17 @@ class ProgramaPrincipal:
                 modelo = input("Por favor ingrese el modelo del auto: ")
                 automovil_a_borrar=Automovil(marca,modelo)
                 automovil_a_borrar.borrar_automovil()
+            if nro ==4:
+                marca = input("Por favor ingrese la marca del auto: ")
+                modelo = input("Por favor ingrese el modelo del auto: ")
+                aumentar_cantidad=Automovil(marca,modelo)
+                aumentar_cantidad.cargar_disponibilidad()
+            if nro == 5:
+                mostrar_automoviles = Automovil.mostrar_listado()
+                print("El listado de autos ordenados es:")
+                for autos in mostrar_automoviles:
+                    print(autos[1])
+                print("\n")
             if nro==0:
                 break
     
@@ -46,6 +59,26 @@ class Automovil:
         self.precio=precio
         self.cantidadDisponibles=cantidadDisponibles
         
+    def mostrar_listado():
+        conexion = Conexiones()
+        conexion.abrirConexion()
+        try:
+            conexion.miCursor.execute("SELECT * FROM AUTOMOVILES")
+            autos = conexion.miCursor.fetchall()
+            return autos
+        except:
+            print("Ha ocurrido un error al aumentar la cantidad disponible :(.")
+    def cargar_disponibilidad(self):
+        conexion = Conexiones()
+        conexion.abrirConexion()
+        try:
+            conexion.miCursor.execute("UPDATE AUTOMOVILES SET cantidadDisponibles = cantidadDisponibles + 1 WHERE marca='{}' and modelo='{}'".format(self.marca, self.modelo))
+            conexion.miConexion.commit()
+            print("Cantidad disponible aumentada con exito!.")
+        except:
+            print("Ha ocurrido un error al aumentar la cantidad disponible :(.")
+
+
     def borrar_automovil(self):
         conexion = Conexiones()
         conexion.abrirConexion()
@@ -60,6 +93,7 @@ class Automovil:
     def cargar_automovil(self):
         conexion = Conexiones()
         conexion.abrirConexion()
+        
         try:
             conexion.miCursor.execute("INSERT INTO AUTOMOVILES(marca,modelo,precio,cantidadDisponibles) VALUES('{}', '{}','{}','{}')".format(self.marca, self.modelo,self.precio,self.cantidadDisponibles))
             conexion.miConexion.commit()
@@ -95,5 +129,5 @@ class Conexiones:
 
             
 programa = ProgramaPrincipal()
-programa.crearTablas()
+#programa.crearTablas()
 programa.menu()
