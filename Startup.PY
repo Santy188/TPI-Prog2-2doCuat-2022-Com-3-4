@@ -6,8 +6,9 @@ class ProgramaPrincipal:
 
     def menu(self):
         while True:
-            print("V1.7")
+            print("V1.7.1")
             print("Menu de opciones Concesionaria")
+            print("5- Mostrar listado")
             print("4- Cargar disponibilidad")
             print("3- Borrar automovil")
             print("2- Modificar Automovil")
