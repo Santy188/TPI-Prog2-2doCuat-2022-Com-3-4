@@ -1,4 +1,3 @@
-
 from Clases import ConexionBD
 from Clases import Automoviles
 from Clases import Motocicletas
@@ -59,6 +58,8 @@ class ProgramaPrincipal:
              
                 nueva_motocicleta = Motocicletas.Motocicleta(marca, modelo, cilindrada, precio, color)
                 print(nueva_motocicleta.cargar_motocicleta())
+            elif nro == 7:
+                print(Motocicletas.Motocicleta.actualizar_precio())
             elif nro==0:
                 print("Saliendo del programa....")
                 print("Come back soon!!!")
@@ -69,5 +70,6 @@ class ProgramaPrincipal:
 
 programa = ProgramaPrincipal()
 #programa.ConexionBD.crearTablas()
-ConexionBD.Conexiones.crearTablaMoto()
+#ConexionBD.Conexiones.crearTablaMoto()
+#ConexionBD.Conexiones().copiar_tabla()
 programa.menu()

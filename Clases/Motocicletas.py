@@ -1,3 +1,4 @@
+from copy import copy
 from Clases import ConexionBD
 
 class Motocicleta:
@@ -8,7 +9,6 @@ class Motocicleta:
         self.precio = precio
         self.color = color
        
-
     def cargar_motocicleta(self):
         conexion = ConexionBD.Conexiones()
         conexion.abrirConexion()
@@ -34,3 +34,19 @@ class Motocicleta:
             return "Ha ocurrido un error al eliminar los datos requeridos."
         finally:
             conexion.cerrarConexion()
+    
+    @classmethod
+    def actualizar_precio(self):
+        conexion = ConexionBD.Conexiones()
+        conexion.abrirConexion()
+
+        try:
+            conexion.miCursor.execute("UPDATE MOTOCICLETAS SET precio = precio + precio * 10/100 WHERE precio")
+            conexion.miConexion.commit()
+            return "El actualizado ha sido exitoso."
+        except:
+            return "Ha ocurrido un error al actualizar los precios"
+        finally:
+            conexion.cerrarConexion()
+
+            

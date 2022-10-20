@@ -1,4 +1,3 @@
-
 from Clases import ConexionBD
 
 class Automovil:

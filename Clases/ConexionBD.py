@@ -1,4 +1,3 @@
-
 import sqlite3
 
 
@@ -28,5 +27,14 @@ class Conexiones:
         conexion.miCursor.execute("DROP TABLE IF EXISTS MOTOCICLETAS")
         conexion.miCursor.execute(
             "CREATE TABLE MOTOCICLETAS (id_moto INTEGER PRIMARY KEY , marca  VARCHAR(30) ,modelo  VARCHAR(30), cilindrada VARCHAR(30),precio INTEGER NOT NULL, color VARCHAR(30), fechaUltimoPrecio DATETIME default current_timestamp)")
+        conexion.miConexion.commit()
+        conexion.cerrarConexion()
+
+    @classmethod
+    def copiar_tabla(self):
+        conexion = Conexiones()
+        conexion.abrirConexion()
+        conexion.miCursor.execute("CREATE TABLE historico_motocicletas (id_moto INTEGER PRIMARY KEY , marca  VARCHAR(30) ,modelo  VARCHAR(30), cilindrada VARCHAR(30),precio INTEGER NOT NULL, color VARCHAR(30), fechaUltimoPrecio DATETIME)")
+        conexion.miCursor.execute("INSERT INTO historico_motocicletas (id_moto, marca, modelo, cilindrada, precio, color, fechaUltimoPrecio) SELECT id_moto, marca, modelo, cilindrada, precio, color, fechaUltimoPrecio FROM MOTOCICLETAS")
         conexion.miConexion.commit()
         conexion.cerrarConexion()
