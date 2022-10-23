@@ -1,0 +1,33 @@
+{% extends './layout.html' %}
+
+{% block body %}
+    <form method="post">
+        <h4>-Modificar automovil</h4>
+        {{ form.marca.label }} {{ form.marca(class__="formulario") }}
+
+        {% for error in form.marca.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <br>
+        {{ form.modelo.label }} {{ form.modelo(class__="formulario") }}
+        {% for error in form.modelo.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+        {{ form.precio.label }} {{ form.precio(class__="formulario") }}
+        {% for error in form.precio.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+        
+        {{ form.hidden_tag() }}
+        
+        {{ form.cantidad(type="hidden", value="1") }}
+
+        {{ form.submit }}
+    </form>
+
+    
+
+{% endblock %}

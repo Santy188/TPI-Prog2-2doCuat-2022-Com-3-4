@@ -1,7 +1,3 @@
-from Clases import ConexionBD
-from Clases import Automoviles
-from Clases import Motocicletas
-
 class ProgramaPrincipal:
 
     def menu(self):
@@ -73,3 +69,75 @@ programa = ProgramaPrincipal()
 #ConexionBD.Conexiones.crearTablaMoto()
 #ConexionBD.Conexiones().copiar_tabla()
 programa.menu()
+
+from flask import Flask, render_template, request
+
+#Definiendo la aplicacion
+app = Flask(__name__)
+
+
+
+#Controladores
+@app.route('/')
+def index():
+    return render_template('automoviles.html')
+
+@app.route('/motocicletas/')
+def motocicletas():
+    return render_template('motocicletas.html')
+
+#Agregar automovil
+@app.route('/addautomoviles/', methods = ['GET', 'POST'])
+def agregarautomovil():
+    precio = request.form['precio']
+    boton = request.form['submit']
+    return render_template('automoviles.html', precio = precio, boton = boton)
+ 
+#Desplegando la aplicacion
+if __name__=="__main__":
+    app.run()
+
+
+
+
+
+
+    #Controladores
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/automoviles/', methods=['GET', 'POST'])
+def automoviles():
+    form = Validaciones()
+    return render_template('automoviles.html', form = form)
+
+@app.route('/motocicletas/', methods=['GET'])
+def motocicletas():
+    return render_template('motocicletas.html')
+
+
+
+
+#Controladores Automoviles
+@app.route('/automoviles/agregar/', methods=['GET', 'POST'])
+def agregarautomovil():
+    form = Validaciones()
+    if form.validate_on_submit():
+        marca = request.form['marca']
+        modelo = request.form['modelo']
+        precio = request.form['precio']
+        cantidad = request.form['cantidad']
+        nuevo_automovil = Automoviles.Automovil(marca,modelo,precio,cantidad)
+        resultado = nuevo_automovil.cargar_automovil()
+        
+        return render_template('automoviles/agregar.html', resultado = resultado)
+
+    return render_template('automoviles/agregar.html')
+
+
+
+
+#Desplegando la aplicacion
+if __name__=="__main__":
+    app.run(debug=True)

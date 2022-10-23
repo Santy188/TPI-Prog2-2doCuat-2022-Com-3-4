@@ -49,15 +49,15 @@ class Automovil:
     def cargar_automovil(self):
         conexion = ConexionBD.Conexiones()
         conexion.abrirConexion()
-        
         try:
             conexion.miCursor.execute("INSERT INTO AUTOMOVILES(marca,modelo,precio,cantidadDisponibles) VALUES('{}', '{}','{}','{}')".format(self.marca, self.modelo,self.precio,self.cantidadDisponibles))
             conexion.miConexion.commit()
             return "Automovil cargado exitosamente"
         except:
-            return "Error al agregar un automovil"
+            return "Error al cargar el automovil"
         finally:
             conexion.cerrarConexion()
+
     
     
     def modificar_automoviles(self):
