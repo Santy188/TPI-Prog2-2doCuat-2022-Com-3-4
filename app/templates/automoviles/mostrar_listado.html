@@ -1,7 +1,22 @@
 {% extends './layout.html' %}
 
 {% block body %}
-    <h4>-Lista de automoviles</h4>
+<header>
+  <nav>
+     <ul>
+           <li><a href="agregar/">Agregar auto</a></li>
+           <br>
+           <li><a href="modificar/">Modificar precio auto</a></li>
+           <br>
+           <li><a href="eliminar/">Eliminar auto</a></li>
+           <br>
+           <li><a href="cargar_disponibilidad/">Cargar Disponibilidad</a></li>
+           <br>
+           <li  class="current-page"><a href="mostrar_listado/">Mostrar automoviles</a></li>
+     </ul>
+  </nav>
+</header>
+    <h3>Listado de automoviles</h3>
     <table class="table-bordered">
         <tr>
           <th>Marca</th>

@@ -1,11 +1,25 @@
 {% extends './layout.html' %}
 
 {% block body %}
+<header>
+    <nav>
+       <ul>
+             <li class="current-page"><a href="agregar/../agregar.html">Agregar auto</a></li>
+             <br>
+             <li><a href="modificar/../modificar.html">Modificar precio auto</a></li>
+             <br>
+             <li><a href="eliminar/../eliminar/">Eliminar auto</a></li>
+             <br>
+             <li><a href="cargar_disponibilidad/">Cargar Disponibilidad</a></li>
+             <br>
+             <li><a href="mostrar_listado/">Mostrar automoviles</a></li>
+       </ul>
+    </nav>
+ </header>
     <form method="post">
         <!-- Los form. estan referenciando a las variables de la clase forms -->
         <!-- La clase css se indica dentro de los ()-->
         <!-- El bucle for es para mostrar los mensajes de error-->
-        <h4>-Agregar automovil</h4>
         {{ form.marca.label }} {{ form.marca(class__="formulario") }}
 
         {% for error in form.marca.errors %}
