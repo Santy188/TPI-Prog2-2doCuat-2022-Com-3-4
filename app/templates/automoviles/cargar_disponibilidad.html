@@ -1,8 +1,23 @@
 {% extends './layout.html' %}
 
 {% block body %}
+<header>
+    <nav>
+       <ul>
+             <li><a href="agregar/">Agregar auto</a></li>
+             <br>
+             <li><a href="modificar/">Modificar precio auto</a></li>
+             <br>
+             <li><a href="eliminar/">Eliminar auto</a></li>
+             <br>
+             <li class="current-page"><a href="cargar_disponibilidad/">Cargar Disponibilidad</a></li>
+             <br>
+             <li><a href="mostrar_listado/">Mostrar automoviles</a></li>
+       </ul>
+    </nav>
+ </header>
     <form method="post">
-        <h4>-Aumentar disponibilidad</h4>
+        <p>Al utilizar esta opcion aumentamos la disponibilidad del vehiculo en 1</p>
         {{ form.marca.label }} {{ form.marca(class__="formulario") }}
         {% for error in form.marca.errors %}
             <span style="color: red;">{{ error }}</span>

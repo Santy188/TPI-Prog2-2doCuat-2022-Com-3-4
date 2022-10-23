@@ -2,9 +2,18 @@
 
 
 {% block body %}
-    <h3>Pagina de inicio!!!!!</h3>
-    <a href="automoviles">Automoviles</a>
-    <br>
-    <a href="motocicletas">Motocicletas</a>
-    
+    <div class="main-container">
+        <article id="auto">
+            <h3>Carga de automovil</h3>
+            <p>En esta seccion podes cargar toda la informacion de un auto, modificarlos, eliminarlos, visualisar la lista completa y mas cosas</p>
+            <button id="sumbit-auto"><a id="bot-main" href="automoviles">Cargar</a></button>
+
+        </article>
+        <article id="moto">
+            <h3>Carga de motocicleta</h3>
+            <p>En esta seccion podes cargar toda la informacion de una motocicleta, modificar algun dato, eliminar algun dato, visualisar la lista completa y mas.</p>
+           <button id="sumbit-moto"><a id="bot-main" href="motocicletas">Cargar</a></button> 
+        </article>
+        
+    </div>
 {% endblock %}

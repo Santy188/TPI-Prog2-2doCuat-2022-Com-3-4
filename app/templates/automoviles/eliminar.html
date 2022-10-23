@@ -1,8 +1,22 @@
 {% extends './layout.html' %}
 
 {% block body %}
+<header>
+    <nav>
+       <ul>
+             <li><a href="agregar/">Agregar auto</a></li>
+             <br>
+             <li><a href="modificar/">Modificar precio auto</a></li>
+             <br>
+             <li class="current-page"><a href="eliminar/">Eliminar auto</a></li>
+             <br>
+             <li><a href="cargar_disponibilidad/">Cargar Disponibilidad</a></li>
+             <br>
+             <li><a href="mostrar_listado/">Mostrar automoviles</a></li>
+       </ul>
+    </nav>
+ </header>
     <form method="post">
-        <h4>-Eliminar automovil</h4>
         {{ form.marca.label }} {{ form.marca(class__="formulario") }}
 
         {% for error in form.marca.errors %}
