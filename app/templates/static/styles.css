@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+    --ligthCyan: hsl(179, 97%, 46%);
+    --darkOrange: hsl(22, 94%, 40%);
+    --trasparentOrange: hsla(22, 68%, 67%, 0.75);
+    --trasparentWhite: hsla(0, 0%, 100%, 0.75);
+    --ligthGray: hsl(0, 26%, 87%);
+    --deepCyan: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --White: #ffffff;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    background: var(--deepCyan);
+}
+
+.main-container {
+    width: 325px;
+    margin: 87px auto 40px;
+    color: var(--trasparentWhite);
+    border-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+}
+
+h2 {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: bold;
+}
+
+#bot-main {
+    color: var(--black);
+}
+
+#bot-main:hover {
+    cursor: pointer;
+    color: var(--ligthGray);
+}
+
+article {
+    width: 100%;
+    height: 440px;
+    padding: 48px;
+}
+
+#auto {
+    background-color: var(--darkCyan);
+}
+
+#moto {
+    background-color: var(--veryDarkCyan);
+}
+
+#bot_bar {
+    color: var(--deepCyan);
+}
+
+#bot_bar:hover {
+    cursor: pointer;
+    color: var(--black);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--darkOrange);
+    box-shadow: 0px 2px var(--trasparentOrange);
+    display: block;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+}
+
+nav li a {
+    display: block;
+    padding: 16px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--trasparentWhite);
+}
+
+nav>ul {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+nav li {
+    flex: 0 0 auto;
+}
+
+input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--darkOrange);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 700px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+
+input[type="submit"] {
+    color: var(--darkOrange);
+    font-size: 20px;
+    border: none;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--darkOrange);
+    color: var(--White);
+}
+
+h3 {
+    margin-bottom: 36px;
+    font-family: 'Big Shoulders Display', cursive;
+    color: var(--ligthGray);
+    font-size: 2.4em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+p {
+    color: var(--trasparentWhite);
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+button {
+    width: 148px;
+    height: 46px;
+    border-radius: 45px;
+    border-style: none;
+    background-color: var(--ligthGray);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+}
+
+.card {
+    border-style: outset;
+    border-radius: 15px;
+    border-width: 1px;
+    box-shadow: 0px 1px 10px;
+    text-align: center;
+    margin-top: 50px;
+    padding: 55px;
+}
+
+#sumbit-auto {
+    color: var(--darkCyan);
+}
+
+#sumbit-moto {
+    color: var(--veryDarkCyan);
+}
+
+main section {
+    display: flex;
+    justify-content: space-around;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 2px solid var(--ligthGray);
+}
+
+#sumbit-auto:hover {
+    background-color: var(--darkCyan);
+    color: var(--ligthGray);
+}
+
+#sumbit-moto:hover {
+    background-color: var(--veryDarkCyan);
+    color: var(--ligthGray);
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background: var(--darkOrange);
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0px -2px var(--trasparentOrange);
+}
+
+footer p {
+    font-size: small;
+    color: var(--deepCyan);
+}
+
+@media(min-width:944px) {
+    .main-container {
+        width: 950px;
+        display: flex;
+        margin-top: 170px;
+    }
+
+    article {
+        margin-bottom: 80px;
+
+    }
+}

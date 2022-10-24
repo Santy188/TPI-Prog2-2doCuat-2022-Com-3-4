@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type= "text/css" href="https://static.staticsave.com/estilostp/styles2-css.css">
+
+  </head>
+  <body>
+    <header>
+      <nav>
+         <ul>
+               <li><a id="bot_bar" href="../agregar">Agregar</a></li>
+               <br>
+               <li><a id="bot_bar" href="../modificar">Modificar precio</a></li>
+               <br>
+               <li><a id="bot_bar" href="../eliminar">Eliminar</a></li>
+               <br>
+               <li><a id="bot_bar" href="../crear_tabla_motocicleta">Crear Tabla</a></li>
+               <br>
+               <li><a id="bot_bar" href="../mostrar_listado">Mostrar Motocicletas</a></li>
+               <br>
+               <li><a id="bot_bar" href="../aumentar_precios">Aumentar Precios</a></li>
+               <br>
+               <li><a id="bot_bar" href="../mostrar_registros">Registros</a></li>
+               <li><a href="../../" id="bot_bar">Volver</a></li>
+         </ul>
+      </nav>
+   </header>
+   <main>
+    <section>
+      <div class="card">
+        {% block body %}
+    
+        {% endblock %}
+      </div>
+    </section>
+    <footer>
+      <p>
+        Copyright 2022 - Grupo 3 ( ͡° ͜ʖ ͡°)
+      </p>
+    </footer>
+   </main>
+    
+    
+    <br>
+    
+  </body>
+</html>

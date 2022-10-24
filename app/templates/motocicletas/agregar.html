@@ -1,0 +1,49 @@
+{% extends './layout2.html' %}
+
+{% block body %}
+    <h2>Agregar motocicleta</h2>
+    <form method="post">
+        <!-- Los form. estan referenciando a las variables de la clase forms -->
+        <!-- La clase css se indica dentro de los ()-->
+        <!-- El bucle for es para mostrar los mensajes de error-->
+        
+        {{ form.marca.label }} {{ form.marca(class__="formulario") }}
+
+        {% for error in form.marca.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <br>
+        {{ form.modelo.label }} {{ form.modelo(class__="formulario") }}
+        {% for error in form.modelo.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+        {{ form.cilindrada.label }} {{ form.cilindrada(class__="formulario") }}
+        {% for error in form.cilindrada.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+
+        {{ form.precio.label }} {{ form.precio(class__="formulario") }}
+        {% for error in form.precio.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+
+        {{ form.color.label }} {{ form.color(class__="formulario") }}
+        {% for error in form.color.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+        
+
+        <!-- Genera un token de la secret key definida en la app -->
+        {{ form.hidden_tag() }}
+        
+        {{ form.submit }}
+    </form>
+
+    
+
+{% endblock %}

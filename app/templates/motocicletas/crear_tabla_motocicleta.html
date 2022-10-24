@@ -1,0 +1,15 @@
+{% extends './layout2.html' %}
+
+{% block body %}
+    <h2>Crear tabla motocicleta</h2>
+    <h5>*Nota: al presionar este boton se eliminaran todos los datos de la tabla, si es que esta ya existe, y se creara una tabla identica.</h5>
+    <form method="post">
+        
+        {{ form.hidden_tag() }}
+        
+        {{ form.submit }}
+    </form>
+
+    
+
+{% endblock %}

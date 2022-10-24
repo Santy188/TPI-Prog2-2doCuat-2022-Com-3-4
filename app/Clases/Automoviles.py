@@ -49,15 +49,15 @@ class Automovil:
     def cargar_automovil(self):
         conexion = ConexionBD.Conexiones()
         conexion.abrirConexion()
-        
         try:
             conexion.miCursor.execute("INSERT INTO AUTOMOVILES(marca,modelo,precio,cantidadDisponibles) VALUES('{}', '{}','{}','{}')".format(self.marca, self.modelo,self.precio,self.cantidadDisponibles))
             conexion.miConexion.commit()
             return "Automovil cargado exitosamente"
         except:
-            return "Error al agregar un automovil"
+            return "Error al cargar el automovil"
         finally:
             conexion.cerrarConexion()
+
     
     
     def modificar_automoviles(self):
@@ -71,3 +71,18 @@ class Automovil:
             return "Error al actualizar un automovil"
         finally:
             conexion.cerrarConexion()  
+
+    @classmethod
+    def crearTablaAutomoviles(self):
+        conexion = ConexionBD.Conexiones()
+        conexion.abrirConexion()
+        try:
+            conexion.miCursor.execute("DROP TABLE IF EXISTS AUTOMOVILES")
+            conexion.miCursor.execute(
+                "CREATE TABLE AUTOMOVILES (id_automovil INTEGER PRIMARY KEY , marca  VARCHAR(30) ,modelo  VARCHAR(30),precio FLOAT NOT NULL, cantidadDisponibles INTEGER NOT NULL,UNIQUE(marca,modelo))")
+            conexion.miConexion.commit()
+            return "La operacion ha sido exitosa"
+        except:
+            return "Operacion fallida, error desconocido"
+        finally:
+            conexion.cerrarConexion()

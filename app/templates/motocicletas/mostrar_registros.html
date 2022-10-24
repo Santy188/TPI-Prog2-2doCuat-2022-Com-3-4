@@ -1,0 +1,18 @@
+{% extends './layout2.html' %}
+
+{% block body %}
+    <h2>Mostrar registros</h2>
+    <form method="post">
+        <!-- Los form. estan referenciando a las variables de la clase forms -->
+        <!-- La clase css se indica dentro de los ()-->
+        <!-- El bucle for es para mostrar los mensajes de error-->
+        {{ form.fecha.label }} {{ form.fecha(class__="formulario") }}
+        {% for error in form.fecha.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        {{ form.hidden_tag() }}
+        {{ form.submit }}
+    </form>
+
+{% endblock %}

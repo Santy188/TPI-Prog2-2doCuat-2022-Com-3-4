@@ -1,0 +1,35 @@
+{% extends './layout2.html' %}
+
+
+{% block body %}
+    <h2>Eliminar motocicleta</h2>
+    <form method="post">
+        {{ form.marca.label }} {{ form.marca(class__="formulario") }}
+
+        {% for error in form.marca.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <br>
+        {{ form.modelo.label }} {{ form.modelo(class__="formulario") }}
+        {% for error in form.modelo.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+        
+        
+        
+        
+        {{ form.precio(type="hidden", value="1") }}
+        {{ form.color(type="hidden", value="hhhh") }}
+        {{ form.cilindrada(type="hidden", value="hhh") }}
+
+
+        {{ form.hidden_tag() }}
+        {{ form.submit }}
+    </form>
+    
+    
+    
+
+{% endblock %}

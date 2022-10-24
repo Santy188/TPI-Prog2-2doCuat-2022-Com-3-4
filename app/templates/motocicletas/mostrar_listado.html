@@ -1,0 +1,27 @@
+{% extends './layout2.html' %}
+
+{% block body %}
+
+    <h2>Listado de Motocicletas</h2>
+    <table class="table-bordered">
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Cilindrada</th>
+          <th>Precio</th>
+          <th>Color</th>
+          <th>Fecha</th>
+        </tr>
+        {% for vehiculo in mostrar_listado %}
+        <tr>
+          <td>{{ vehiculo[1] }}</td>
+          <td>{{ vehiculo[2] }}</td>
+          <td>{{ vehiculo[3] }}</td>
+          <td>{{ vehiculo[4] }}</td>
+          <td>{{ vehiculo[5] }}</td>
+          <td>{{ vehiculo[6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

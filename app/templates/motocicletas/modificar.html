@@ -1,0 +1,34 @@
+{% extends './layout2.html' %}
+
+{% block body %}
+    <h2>Modificar motocicleta</h2>
+    <form method="post">
+        {{ form.marca.label }} {{ form.marca(class__="formulario") }}
+
+        {% for error in form.marca.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        <br>
+        {{ form.modelo.label }} {{ form.modelo(class__="formulario") }}
+        {% for error in form.modelo.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+        {{ form.precio.label }} {{ form.precio(class__="formulario") }}
+        {% for error in form.precio.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <br>
+        
+        {{ form.hidden_tag() }}
+        
+        {{ form.color(type="hidden", value="hhh") }}
+        {{ form.cilindrada(type="hidden", value="hhh") }}
+
+        {{ form.submit }}
+    </form>
+
+    
+
+{% endblock %}

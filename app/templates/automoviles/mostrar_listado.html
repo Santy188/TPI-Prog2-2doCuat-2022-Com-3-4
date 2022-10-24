@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+
+{% block body %}
+
+    <h4>Listado de automoviles</h4>
+    <table class="table-bordered">
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+        </tr>
+        {% for autos in mostrar_automoviles %}
+        <tr>
+          <td>{{ autos[1] }}</td>
+          <td>{{ autos[2] }}</td>
+          <td>{{ autos[3] }}</td>
+          <td>{{ autos[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
