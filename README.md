@@ -14,7 +14,7 @@ pip install Flask-WTF
 ------------
 ### Ejecutar el codigo
 
-El codigo puede ejecutarse normalmente desde Visual studio a partir del archivo **Main.py** y se escribira la dirección ip en la consola para ingresar.
+El codigo puede ejecutarse normalmente desde Visual Studio a partir del archivo **Main.py** y se escribira la dirección ip en la consola para ingresar.
 
 
 
