@@ -6,7 +6,7 @@ Thiago Cingolani 50533 - Santiago Beron 50520 - Lucas Lodigiani 50641
 ------------
 ### Instalar Flask
 
-Para construir la aplicacion web se utilizo el framework Flask, para compilar y ejecutar el codigo se debe instalar utilizando la terminal de python, y la libreria WTForms utilizada para validar datos.
+Para construir la aplicacion web se utilizo el framework Flask, para compilar y ejecutar el codigo se debe instalar utilizando la terminal de python, y la libreria WTForms utilizada para validar los datos.
 ```
 pip install Flask
 pip install Flask-WTF
