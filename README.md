@@ -1,6 +1,6 @@
 **Grupo 3 - Comisión 3**
 
-Thiago Cingolani 50533 - Santiago Beron 50520 - Lucas Lodigiani 50641
+Thiago Cingolani 50533 - Santiago Beron 50520 - Lucas Lodigiani 50641 - Agustin Gaitieri 50588
 ## Requisitos previos
 
 ------------
@@ -14,7 +14,7 @@ pip install Flask-WTF
 ------------
 ### Ejecutar el codigo
 
-El codigo puede ejecutarse normalmente desde Visual Studio a partir del archivo **Main.py** y se escribira la dirección ip en la consola para ingresar.
+El codigo puede ejecutarse normalmente desde Visual Studio Code a partir del archivo **Main.py** y se escribira la dirección ip en la consola para ingresar.
 
 
 
